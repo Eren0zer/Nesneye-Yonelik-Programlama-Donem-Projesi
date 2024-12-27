@@ -41,5 +41,5 @@ Proje şu şekilde yapılandırılmıştır:
 
 1. **Proje Dosyalarını Klonlayın**:
    ```bash
-   git clone https://github.com/kullanici-adi/proje-adi.git
-   cd proje-adi
+   git clone https://github.com/Eren0zer/Nesneye-Yonelik-Programlama-Donem-Projesi
+   cd Nesneye-Yonelik-Programlama-Donem-Projesi
