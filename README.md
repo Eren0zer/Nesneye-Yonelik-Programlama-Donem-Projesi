@@ -37,6 +37,70 @@ Proje şu şekilde yapılandırılmıştır:
 - **`KrediKarti`**: Kredi kartı işlemlerini yönetir.
 - **`Krediler`**: Müşteri kredileri ve detayları.
 
+## Teknik Detaylar
+
+### Sınıflar ve Görevleri
+- **`Kisi`**:
+  - Ortak özellikleri barındıran temel sınıf.
+  - Alt sınıflar: `BankaPersonel`, `Musteri`.
+  
+- **`BankaPersonel`**:
+  - Personel detaylarını ve sorumlu olduğu müşterileri yönetir.
+  - `musteriEkle()` metodu ile yeni müşteri ekler.
+
+- **`Musteri`**:
+  - Müşteri detaylarını yönetir.
+  - Vadeli, vadesiz ve yatırım hesaplarını yönetir.
+  - Krediler ve kredi kartlarını ekleme/silme yeteneği sağlar.
+
+- **Hesap Türleri**:
+  - `VadeliHesap`: Faiz oranı ve vadeli bakiye içerir.
+  - `VadesizHesap`: Günlük işlemler için uygundur.
+  - `YatirimHesap`: Döviz ve yatırım işlemleri için kullanılır.
+
+- **`KrediKarti`**:
+  - Müşteriye atanmış kredi kartlarının limit ve borç detaylarını içerir.
+
+- **`Krediler`**:
+  - Kredilerin detaylarını ve limit hesaplamalarını içerir.
+
+### Önemli Metodlar
+- `musteriEkle(Musteri musteri)`: Yeni müşteri ekler.
+- `hesapEkle(BankaHesap hesap)`: Müşteriye yeni hesap ekler.
+- `krediKartiBorcOdeme(double bakiye, double borc)`: Kredi kartı borcunu öder.
+- `paraTransfer(String hesapTuru, double miktar)`: Hesaplar arasında para transferi yapar.
+
+## Veri Akışı
+
+1. **Personel ve Müşteri Tanımlaması**:
+   - `BankaPersonel` ve `Musteri` sınıfları kullanılarak personel ve müşteriler oluşturulur.
+
+2. **Hesap İşlemleri**:
+   - Müşterilere vadeli, vadesiz veya yatırım hesapları eklenir.
+   - Hesap detayları `toString()` metodu ile görüntülenir.
+
+3. **Kredi Kartı ve Krediler**:
+   - Müşterilere kredi kartları ve krediler atanır.
+   - Borç ödeme ve limit kontrol işlemleri yapılır.
+
+4. **Sonuçların Gösterimi**:
+   - Tüm bilgiler `System.out.println` ile konsola yazdırılır.
+
+## Mimari Diyagram
+
+Aşağıdaki diyagram, sınıflar arasındaki temel ilişkileri göstermektedir:
+
+```plaintext
+Kisi
+  ├── BankaPersonel
+  │      └── Musteri
+  │             ├── VadeliHesap
+  │             ├── VadesizHesap
+  │             ├── YatirimHesap
+  │             ├── KrediKarti
+  │             └── Krediler
+
+
 ## Kurulum ve Çalıştırma
 
 1. **Proje Dosyalarını Klonlayın**:
