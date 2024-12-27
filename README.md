@@ -99,7 +99,7 @@ Kisi
   │             ├── YatirimHesap
   │             ├── KrediKarti
   │             └── Krediler
-
+```
 
 ## Kurulum ve Çalıştırma
 
